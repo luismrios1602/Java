@@ -19,6 +19,32 @@ public class Ejercicio23 {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner leer = new Scanner(System.in);
+        int cantTrab, cantDias, cantHoras,totalTrab=0, totalEmpresa=0, valorHora;
+        String nombre;
+        
+        System.out.println("Ingrese la cantidad de Trabajadores: ");
+        cantTrab = leer.nextInt();
+        
+        //Ciclo de trabajadores:
+        for (int i = 1; i <= cantTrab; i++) {
+            System.out.print("Ingrese el nombre del "+i+"° Trabajador: ");
+            nombre = leer.next();
+            System.out.print("Ingrese la cantidad de días laborados por "+nombre+": ");
+            cantDias = leer.nextInt();
+            System.out.print("Ingrese el valor por hora: ");
+            valorHora = leer.nextInt();
+            
+            //Ciclo de días: 
+            for (int j = 1; j <= cantDias; j++) {
+                System.out.print("Ingrese la cantidad de horas laboradas en el "+j+"° día: ");
+                cantHoras = leer.nextInt();
+                totalTrab += (cantHoras * valorHora);
+            }
+            totalEmpresa += totalTrab;
+            System.out.println(nombre+" ganó: $"+totalTrab);
+            totalTrab = 0;
+        }
+        System.out.println("El valor total de la nómina es: $"+totalEmpresa);
     }
     
 }
