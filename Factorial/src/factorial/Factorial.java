@@ -27,10 +27,14 @@ public class Factorial {
         for (int i = 1; i <= num; i++) {
             //Ciclo para hallar del factorial en base al número por donde va:
             
-           for (int j = i; j <= 1; j--) {
-                fact = (fact) * j;
+           for (int j = 1; j <= i; j++) {
+                fact = fact * j;
+            }
+            if (fact<0) {
+                fact *= -1;
             }
             System.out.println(i+"! = "+fact);
+            fact = 1;
         }
     }
     
